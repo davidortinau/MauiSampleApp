@@ -1,3 +1,5 @@
+using System.Diagnostics;
+
 namespace Widgets
 {
     public class NIQContentPage : ContentPage
@@ -30,6 +32,12 @@ namespace Widgets
                 IsBusy = false;
                 return false;
             });
+        }
+
+        protected override void OnAppearing()
+        {
+            Debug.WriteLine("bababoom");
+            base.OnAppearing();
         }
     }
 }

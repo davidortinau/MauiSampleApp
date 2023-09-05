@@ -5,6 +5,7 @@
 		<UseMaui>true</UseMaui>
 		<ImplicitUsings>enable</ImplicitUsings>
 		<OutputType>Library</OutputType>
+		<UseMauiAssets>True</UseMauiAssets>
 	</PropertyGroup>
 
 	<ItemGroup>
@@ -14,11 +15,6 @@
 
 	</ItemGroup>
  
-	<ItemGroup>
-      <None Remove="Fonts\aktivgrotesk_bold.ttf" />
-	  <None Remove="Fonts\aktivgrotesk_italic.ttf" />
-	  <None Remove="Fonts\aktivgrotesk_regular.ttf" />
-	</ItemGroup>
 
 	<ItemGroup>
 	  <ProjectReference Include="..\..\Utilities\Utilities\Utilities.csproj" />

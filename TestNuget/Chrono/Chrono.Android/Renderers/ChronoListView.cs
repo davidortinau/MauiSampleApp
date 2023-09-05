@@ -4,8 +4,8 @@ using Android.Views;
 using Android.Widget;
 using System.Collections.Generic;
 using System.Linq;
+using Microsoft.Maui.Controls.Handlers.Compatibility;
 using Microsoft.Maui.Controls.Platform;
-using Microsoft.Maui.Controls.Compatibility.Platform.Android;
 using static Android.Widget.AdapterView;
 
 

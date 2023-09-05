@@ -15,7 +15,6 @@ namespace Widgets.Droid
                     handlers.AddCompatibilityRenderer(typeof(NIQWebView), typeof(NIQWebViewRenderer));
                     handlers.AddCompatibilityRenderer(typeof(NIQCarouselView), typeof(NIQCarouselRenderer));
                     handlers.AddCompatibilityRenderer(typeof(NIQDarkPopupItem), typeof(NIQDarkPopupItemRenderer));
-                    handlers.AddCompatibilityRenderer(typeof(ScrollView), typeof(NIQScrollViewRenderer));
                 })
                 .ConfigureEffects(effects =>
                 {

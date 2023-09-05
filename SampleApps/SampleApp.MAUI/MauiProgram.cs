@@ -13,48 +13,36 @@ namespace SampleApp.MAUI
         {
 
             var builder = MauiApp.CreateBuilder()
-                .UseMauiApp<App>()
+                .UseMauiApp<App>() // since none of the methods called this first
                 .UseMauiCompatibility()
+                .UseSharedMauiApp() // from Widgets, registers some fonts
+                .UseSharedDroidMauiApp() // from Widgets.Android, registers renderers and effects
+                .UseChronoSharedDroidMauiApp() // from Chrono.Droid, registers a renderer
                 .ConfigureFonts(fonts =>
                 {
                     fonts.AddFont("OpenSans-Regular.ttf", "OpenSansRegular");
                     fonts.AddFont("OpenSans-Semibold.ttf", "OpenSansSemibold");
-                })
-                .ConfigureMauiHandlers((handlers) =>
-                {
-                
-#if ANDROID
-                handlers.AddCompatibilityRenderer(typeof(Editor), typeof(NIQEditorRenderer));
-                handlers.AddCompatibilityRenderer(typeof(NIQWebView), typeof(NIQWebViewRenderer));
-                handlers.AddCompatibilityRenderer(typeof(NIQCarouselView), typeof(NIQCarouselRenderer));
-                handlers.AddCompatibilityRenderer(typeof(Chrono.ChronoListView), typeof(Chrono.Droid.ChronoListViewRenderer));
-                handlers.AddCompatibilityRenderer(typeof(Widgets.NIQDarkPopupItem), typeof(NIQDarkPopupItemRenderer));
-                //handlers.AddCompatibilityRenderer(typeof(ScrollView), typeof(NIQScrollViewRenderer));
-#endif
-                })
-                .ConfigureEffects(effects =>
-                {
-#if ANDROID
-                    effects.Add<NIQButtonTintEffect, NIQAndroidButtonTintEffect>();
-                    effects.Add<TintImage, TintImageImpl>();
-#endif
                 });
-
- /*           });
-
-            builder.UseSharedMauiApp();
-
-#if ANDROID
-            builder.UseSharedDroidMauiApp();
-            builder.UseChronoSharedDroidMauiApp();
-#endif
-*/
 
 #if DEBUG
             builder.Logging.AddDebug();
 #endif
 
+            HandlerOverrides();
+            
             return builder.Build();
+        }
+
+        private static void HandlerOverrides()
+        {
+            Microsoft.Maui.Handlers.ScrollViewHandler.Mapper.AppendToMapping("VerticalScrollBarVisibility",
+                (handler, view) =>
+                {
+                    if (view.VerticalScrollBarVisibility == ScrollBarVisibility.Always)
+                    {
+                        handler.PlatformView.ScrollbarFadingEnabled = false;
+                    }
+                });
         }
     }
 }

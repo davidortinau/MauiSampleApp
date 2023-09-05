@@ -10,7 +10,7 @@ namespace Chrono.Droid
             builder
                 .ConfigureMauiHandlers((handlers) =>
                 {
-                    handlers.AddCompatibilityRenderer(typeof(Chrono.ChronoListView), typeof(Chrono.Droid.ChronoListViewRenderer));
+                    handlers.AddHandler(typeof(Chrono.ChronoListView), typeof(ChronoListViewRenderer));
                 });
             return builder;
         }
