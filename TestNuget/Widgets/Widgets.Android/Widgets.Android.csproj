@@ -1,6 +1,6 @@
 ﻿<Project Sdk="Microsoft.NET.Sdk">
   <PropertyGroup>
-    <TargetFrameworks>net7.0-android</TargetFrameworks>
+    <TargetFrameworks>net8.0-android</TargetFrameworks>
     <UseMaui>true</UseMaui>
     <ImplicitUsings>enable</ImplicitUsings>
 	<SupportedOSPlatformVersion>29.0</SupportedOSPlatformVersion>
@@ -37,7 +37,6 @@
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\..\Utilities\Utilities.Android\Utilities.Android.csproj" />
-    <ProjectReference Include="..\..\Utilities\Utilities\Utilities.csproj" />
     <ProjectReference Include="..\Widgets\Widgets.csproj" />
   </ItemGroup>
 </Project>

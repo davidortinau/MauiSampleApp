@@ -61,7 +61,7 @@ namespace Widgets
         /// </summary>
         protected override void OnResume()
         {
-            MessagingCenter.Send(this, OnResumeMessage);
+            CustomMessagingCenter.Send(this, OnResumeMessage);
 
             base.OnResume();
         }
@@ -72,7 +72,7 @@ namespace Widgets
         /// </summary>
         protected override void OnSleep()
         {
-            MessagingCenter.Send(this, OnSleepMessage);
+            CustomMessagingCenter.Send(this, OnSleepMessage);
             base.OnSleep();
         }
         #endregion
