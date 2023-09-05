@@ -1,0 +1,148 @@
+﻿<Project Sdk="Microsoft.NET.Sdk">
+
+	<PropertyGroup>
+		<TargetFrameworks>net7.0-android</TargetFrameworks>
+		<OutputType>Exe</OutputType>
+		<RootNamespace>SampleApp.MAUI</RootNamespace>
+		<UseMaui>true</UseMaui>
+		<SingleProject>true</SingleProject>
+		<ImplicitUsings>enable</ImplicitUsings>
+
+		<!-- Display name -->
+		<ApplicationTitle>CWL MAUI Sample</ApplicationTitle>
+
+		<!-- App Identifier -->
+		<ApplicationId>com.cwlsamplemaui</ApplicationId>
+		<ApplicationIdGuid>29175535-b700-452c-a389-41f37bc25128</ApplicationIdGuid>
+
+		<!-- Versions -->
+		<ApplicationDisplayVersion>1.0</ApplicationDisplayVersion>
+		<ApplicationVersion>1</ApplicationVersion>
+
+		<SupportedOSPlatformVersion Condition="$([MSBuild]::GetTargetPlatformIdentifier('$(TargetFramework)')) == 'android'">21.0</SupportedOSPlatformVersion>
+		<SupportedOSPlatformVersion Condition="$([MSBuild]::GetTargetPlatformIdentifier('$(TargetFramework)')) == 'android'">21.0</SupportedOSPlatformVersion>
+	</PropertyGroup>
+
+	<PropertyGroup Condition="'$(Configuration)|$(TargetFramework)|$(Platform)'=='Debug|net7.0-android|AnyCPU'">
+	  <AndroidEnableMultiDex>True</AndroidEnableMultiDex>
+	</PropertyGroup>
+
+	<PropertyGroup Condition="'$(Configuration)|$(TargetFramework)|$(Platform)'=='Release|net7.0-android|AnyCPU'">
+	  <AndroidEnableMultiDex>True</AndroidEnableMultiDex>
+	</PropertyGroup>
+
+	<ItemGroup>
+		<!-- App Icon -->
+		<MauiIcon Include="Resources\AppIcon\appicon.svg" ForegroundFile="Resources\AppIcon\appiconfg.svg" Color="#512BD4" />
+
+		<!-- Splash Screen -->
+		<MauiSplashScreen Include="Resources\Splash\splash.svg" Color="#512BD4" BaseSize="128,128" />
+
+		<!-- Images -->
+		<MauiImage Include="Resources\Images\*" />
+		<MauiImage Update="Resources\Images\dotnet_bot.svg" BaseSize="168,208" />
+
+		<!-- Custom Fonts -->
+		<MauiFont Include="Resources\Fonts\*" />
+
+		<!-- Raw Assets (also remove the "Resources\Raw" prefix) -->
+		<MauiAsset Include="Resources\Raw\**" LogicalName="%(RecursiveDir)%(Filename)%(Extension)" />
+	</ItemGroup>
+
+	<ItemGroup>
+	  <EmbeddedResource Remove="Resources\Strings.resx" />
+	</ItemGroup>
+
+	<ItemGroup>
+	  <None Remove="Assets\Facts.json" />
+	  <None Remove="Assets\Images\backButton.png" />
+	  <None Remove="Assets\Images\fail.png" />
+	  <None Remove="Assets\Images\fail1.png" />
+	  <None Remove="Assets\Images\fail10.png" />
+	  <None Remove="Assets\Images\fail11.png" />
+	  <None Remove="Assets\Images\fail12.png" />
+	  <None Remove="Assets\Images\fail13.png" />
+	  <None Remove="Assets\Images\fail14.png" />
+	  <None Remove="Assets\Images\fail15.png" />
+	  <None Remove="Assets\Images\fail16.png" />
+	  <None Remove="Assets\Images\fail17.png" />
+	  <None Remove="Assets\Images\fail2.png" />
+	  <None Remove="Assets\Images\fail3.png" />
+	  <None Remove="Assets\Images\fail4.png" />
+	  <None Remove="Assets\Images\fail5.png" />
+	  <None Remove="Assets\Images\fail6.png" />
+	  <None Remove="Assets\Images\fail7.png" />
+	  <None Remove="Assets\Images\fail8.png" />
+	  <None Remove="Assets\Images\fail9.png" />
+	  <None Remove="Assets\Images\ic_filter.png" />
+	  <None Remove="Assets\Images\ic_sync.png" />
+	  <None Remove="Assets\Images\ic_sync_pending.png" />
+	  <None Remove="Assets\md.sqlite" />
+	  <None Remove="Assets\QctAlertContent.json" />
+	  <None Remove="Assets\QCTContent.json" />
+	  <None Remove="Assets\TDLValidation.json" />
+	</ItemGroup>
+
+	<ItemGroup>
+	  <EmbeddedResource Include="Assets\Facts.json" />
+	  <EmbeddedResource Include="Assets\Images\backButton.png" />
+	  <EmbeddedResource Include="Assets\Images\fail.png" />
+	  <EmbeddedResource Include="Assets\Images\fail1.png" />
+	  <EmbeddedResource Include="Assets\Images\fail10.png" />
+	  <EmbeddedResource Include="Assets\Images\fail11.png" />
+	  <EmbeddedResource Include="Assets\Images\fail12.png" />
+	  <EmbeddedResource Include="Assets\Images\fail13.png" />
+	  <EmbeddedResource Include="Assets\Images\fail14.png" />
+	  <EmbeddedResource Include="Assets\Images\fail15.png" />
+	  <EmbeddedResource Include="Assets\Images\fail16.png" />
+	  <EmbeddedResource Include="Assets\Images\fail17.png" />
+	  <EmbeddedResource Include="Assets\Images\fail2.png" />
+	  <EmbeddedResource Include="Assets\Images\fail3.png" />
+	  <EmbeddedResource Include="Assets\Images\fail4.png" />
+	  <EmbeddedResource Include="Assets\Images\fail5.png" />
+	  <EmbeddedResource Include="Assets\Images\fail6.png" />
+	  <EmbeddedResource Include="Assets\Images\fail7.png" />
+	  <EmbeddedResource Include="Assets\Images\fail8.png" />
+	  <EmbeddedResource Include="Assets\Images\fail9.png" />
+	  <EmbeddedResource Include="Assets\Images\ic_filter.png">
+	    <CopyToOutputDirectory>Never</CopyToOutputDirectory>
+	  </EmbeddedResource>
+	  <EmbeddedResource Include="Assets\Images\ic_sync.png" />
+	  <EmbeddedResource Include="Assets\Images\ic_sync_pending.png" />
+	  <EmbeddedResource Include="Assets\md.sqlite" />
+	  <EmbeddedResource Include="Assets\QctAlertContent.json" />
+	  <EmbeddedResource Include="Assets\QCTContent.json" />
+	  <EmbeddedResource Include="Assets\TDLValidation.json" />
+	</ItemGroup>
+
+	<ItemGroup>
+	  <MauiXaml Include="Resources\strings.resx" />
+	</ItemGroup>
+
+	<ItemGroup>
+		<PackageReference Include="Microsoft.Extensions.Logging.Debug" Version="7.0.0" />
+	</ItemGroup>
+
+	<ItemGroup>
+	  <ProjectReference Include="..\..\TestNuget\Chrono\Chrono.Android\Chrono.Android.csproj" />
+	  <ProjectReference Include="..\..\TestNuget\Chrono\Chrono\Chrono.csproj" />
+	  <ProjectReference Include="..\..\TestNuget\Utilities\Utilities\Utilities.csproj" />
+	  <ProjectReference Include="..\..\TestNuget\Widgets\Widgets\Widgets.csproj" />
+	</ItemGroup>
+	<ItemGroup>
+		<AndroidResource Update="Platforms\Android\Resources\layout\ChronoNative.xml">
+			<Generator></Generator>
+		</AndroidResource>
+	</ItemGroup>
+
+	<ItemGroup>
+		<MauiXaml Update="Pages\MainPage.xaml">
+			<Generator>MSBuild:Compile</Generator>
+		</MauiXaml>
+	</ItemGroup>
+
+	<ItemGroup>
+	  <Folder Include="Assets\WebContent\" />
+	</ItemGroup>
+
+</Project>

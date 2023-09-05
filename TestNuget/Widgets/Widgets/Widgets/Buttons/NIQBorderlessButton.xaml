@@ -1,0 +1,67 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<widgets:NIQButton  xmlns:widgets="clr-namespace:Widgets"
+             xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="Widgets.NIQBorderlessButton"
+             xmlns:local="clr-namespace:Widgets;assembly=Widgets"
+             x:Name="BorderlessButton">
+    <ContentView.Resources>
+        <ResourceDictionary>
+            <local:ButtonTextConverter x:Key="buttonText"/>
+            <widgets:InverseBoolConverter x:Key="inverseBool"/>
+       </ResourceDictionary>
+    </ContentView.Resources>
+    <ContentView.Content>
+        <StackLayout>
+            <Button x:Name="button" HeightRequest="40" FontSize="14"
+                    ImageSource="{Binding Source={x:Reference BorderlessButton}, Path=ImageSource}"
+                    Padding="{Binding Source={x:Reference BorderlessButton}, Path=ButtonPadding}"
+                    BackgroundColor="Transparent" BorderColor="Transparent"
+                    CornerRadius="{Binding Source={x:Reference BorderlessButton}, Path=CornerRadius}"
+                    Command="{Binding Source={x:Reference BorderlessButton}, Path=Command}"
+                    CommandParameter="{Binding Source={x:Reference BorderlessButton}, Path=CommandParameter}"
+                    TextColor="{Binding Source={x:Reference BorderlessButton}, Path=TextColor}"
+                    IsEnabled="{Binding Source={x:Reference BorderlessButton}, Path=IsEnabled}"
+                    FontFamily="{Binding Source={x:Reference BorderlessButton}, Path=FontFamily}"
+                    IsVisible="{Binding Source={x:Reference BorderlessButton},
+                                Converter={StaticResource inverseBool},
+                                Path=IsBusy}">
+                <Button.Text>
+                    <MultiBinding Converter="{StaticResource buttonText}">
+                        <MultiBinding.Bindings>
+                            <Binding Source="{x:Reference BorderlessButton}" Path="Text" />
+                            <Binding Source="{x:Reference BorderlessButton}" Path="IsUpperCaseAllowed" />
+                        </MultiBinding.Bindings>
+                    </MultiBinding>
+                </Button.Text>
+                <VisualStateManager.VisualStateGroups>
+                    <VisualStateGroupList>
+                        <VisualStateGroup x:Name="NIQBorderlessButtonCommonStates">
+                            <VisualState x:Name="Normal">
+                                <VisualState.Setters>
+                                    <Setter Property="BackgroundColor" Value="Transparent" />
+                                </VisualState.Setters>
+                            </VisualState>
+                            <VisualState x:Name="Pressed">
+                                <VisualState.Setters>
+                                    <Setter Property="BackgroundColor" Value="{Binding Source={x:Reference BorderlessButton}, Path=PressedColor}" />
+                                    <Setter Property="TextColor" Value="{Binding Source={x:Reference BorderlessButton}, Path=PressedTextColor}" />
+                                </VisualState.Setters>
+                            </VisualState>
+                            <VisualState x:Name="Released">
+                                <VisualState.Setters>
+                                    <Setter Property="BackgroundColor" Value="{Binding Source={x:Reference BorderlessButton}, Path=PressedColor}" />
+                                </VisualState.Setters>
+                            </VisualState>
+                            <VisualState x:Name="Disabled">
+                                <VisualState.Setters>
+                                    <Setter Property="TextColor" Value="{Binding Source={x:Reference BorderlessButton}, Path=DisabledColor}" />
+                                </VisualState.Setters>
+                            </VisualState>
+                        </VisualStateGroup>
+                    </VisualStateGroupList>
+                </VisualStateManager.VisualStateGroups>
+            </Button>
+        </StackLayout>
+    </ContentView.Content>
+</widgets:NIQButton>

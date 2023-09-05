@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ScrollView
+    xmlns="http://schemas.microsoft.com/dotnet/2021/maui" 
+    xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+    xmlns:widgets="clr-namespace:Widgets"
+    x:Class="Widgets.NIQClickableList">
+    <StackLayout x:Name="popupListView" BindableLayout.ItemsSource="{Binding ItemsList}" Spacing="0" Margin="0" Padding="0">
+        <BindableLayout.ItemTemplate>
+            <DataTemplate>
+                <widgets:NIQPopupItem Text="{Binding Title}" Padding="10, 0, 10, 0"
+                                      VerticalOptions="CenterAndExpand" VerticalTextAlignment="Center"
+                                      HeightRequest="50"
+                                      TextColor="{Binding Source={x:Static widgets:NIQThemeController.Theme}, Path=OnSurface}"
+                                      BackgroundColor="{Binding Source={x:Static widgets:NIQThemeController.Theme}, Path=Background}">
+                    <widgets:NIQPopupItem.GestureRecognizers>
+                        <TapGestureRecognizer Tapped="OnListItemTapped" CommandParameter="{Binding Index}"/>
+                    </widgets:NIQPopupItem.GestureRecognizers>
+                </widgets:NIQPopupItem>
+            </DataTemplate>
+        </BindableLayout.ItemTemplate>
+    </StackLayout>
+</ScrollView>

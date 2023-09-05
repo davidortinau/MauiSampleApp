@@ -1,0 +1,95 @@
+[
+  {
+    "FactTitle": "Exhibition",
+    "FactValue": "351212",
+    "FactCode": "1000",
+    "FactOrder": 2,
+    "IsMandatory": false,
+    "FactType": 3,
+    "Options": [
+      {
+        "Title": "Item 1",
+        "Code": "10001",
+        "Order": 1
+      },
+      {
+        "Title": "Item 3",
+        "Code": "10002",
+        "Order": 3
+      },
+      {
+        "Title": "Item 2",
+        "Code": "10003",
+        "Order": 2
+      },
+      {
+        "Title": "Item 4",
+        "Code": "10004",
+        "Order": 4
+      }
+    ]
+  },
+  {
+    "FactTitle": "Number of POP by type of POP",
+    "FactValue": "7",
+    "FactCode": "1001",
+    "FactOrder": 0,
+    "IsMandatory": false,
+    "FactType": 0,
+    "Options": null
+  },
+  {
+    "FactTitle": "Price",
+    "FactValue": "25,1",
+    "FactCode": "1002",
+    "FactOrder": 1,
+    "IsMandatory": true,
+    "FactType": 1,
+    "Options": null
+  },
+  {
+    "FactTitle": "Comment",
+    "FactValue": "Not collected",
+    "FactCode": "1003",
+    "FactOrder": 4,
+    "IsMandatory": false,
+    "FactType": 2,
+    "Options": null
+  },
+  {
+    "FactTitle": "Comment Multiline",
+    "FactValue": "Store data were not collected because of shop fire.",
+    "FactCode": "1004",
+    "FactOrder": 5,
+    "IsMandatory": false,
+    "FactType": 9,
+    "Options": null
+  },
+  {
+    "FactTitle": "Presence",
+    "FactValue": null,
+    "FactCode": "1005",
+    "FactOrder": 3,
+    "IsMandatory": true,
+    "FactType": 5,
+    "Options": null
+  },
+  {
+    "FactTitle": "Pic of top",
+    "FactValue": null,
+    "FactCode": 1006,
+    "FactOrder": 6,
+    "FactType": 8,
+    "IsMandatory": false,
+    "AllowedValues": "5"
+  },
+  {
+    "FactTitle": "Pic of bottom",
+    "FactValue": null,
+    "FactCode": 1007,
+    "FactOrder": 7,
+    "FactType": 8,
+    "IsMandatory": false,
+    "AllowedValues": "5"
+  }
+]

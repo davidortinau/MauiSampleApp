@@ -1,0 +1,43 @@
+﻿{
+  "H": {
+    "UUID": "EventUUID",
+    "TS": "CurrentDate",
+    "SRC": "LHHT",
+    "SRV": "2_00.77.10.16",
+    "RID": "AuditorID",
+    "CID": "76"
+  },
+  "D": {
+    "SID": "38653",
+    "AID": "2925613",
+    "FRQ": "M",
+    "EID": "102"
+  },
+  "A": [
+    {
+      "AN": "TotalItems",
+      "AV": "6"
+    },
+    {
+      "AN": "PriceOutliers",
+      "AV": "3"
+    },
+    {
+      "AN": "Items",
+      "AV": [
+        {
+          "CategoryName": "LUBRICANT",
+          "Products": "66466152 | HP-HP GEAR DRIVE EP 90-5 LTR-PCN-MONO GEAR | 1100"
+        }
+      ]
+    },
+    {
+      "AN": "StoreStatus",
+      "AV": "AC"
+    },
+    {
+      "AN": "OriginalAuditDate",
+      "AV": "03-NOV-20"
+    }
+  ]
+}

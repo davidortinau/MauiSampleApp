@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ContentPage
+    xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+    xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+    xmlns:ios="clr-namespace:Microsoft.Maui.Controls.PlatformConfiguration.iOSSpecific;assembly=Microsoft.Maui.Controls"
+    ios:Page.ModalPresentationStyle="OverFullScreen"
+    xmlns:widgets="clr-namespace:Widgets;assembly=Widgets"
+    x:Class="Widgets.NIQDialog"
+    BackgroundColor="#40000000">
+    <Frame VerticalOptions="Center"
+           HorizontalOptions="Center"
+           WidthRequest="300"
+           MinimumHeightRequest="100"
+           Padding="15, 10"
+           BackgroundColor="{Binding BackgroundColor}" CornerRadius="4">
+        <StackLayout Orientation="Vertical">
+            <StackLayout Orientation="Horizontal">
+                <Image x:Name="icon"
+                       WidthRequest="20"
+                       HeightRequest="20"
+                       Margin="0,5,5,0"
+                       BackgroundColor="Transparent"
+                       IsVisible="False"/>
+                <Label x:Name="title"
+                       HorizontalOptions="StartAndExpand"
+                       FontSize="18"
+                       FontAttributes="Bold"
+                       TextColor="{Binding TextColor}"
+                       VerticalOptions="CenterAndExpand" />
+                <widgets:NIQImageButton x:Name="titleButton" IsVisible="False" WidthRequest="30" HeightRequest="30"/>
+            </StackLayout>
+            <StackLayout x:Name="contentLayout" Margin="0, 5, 0, 5"/>
+            <StackLayout x:Name="actionsLayout" Orientation="Horizontal" VerticalOptions="End" HorizontalOptions="EndAndExpand"/>
+        </StackLayout>
+    </Frame>
+</ContentPage>

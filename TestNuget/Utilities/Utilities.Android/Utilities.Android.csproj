@@ -1,0 +1,79 @@
+﻿<Project Sdk="Microsoft.NET.Sdk">
+
+    <PropertyGroup>
+        <TargetFrameworks>net7.0-android</TargetFrameworks>
+        <UseMaui>true</UseMaui>
+        <ImplicitUsings>enable</ImplicitUsings>
+		<SupportedOSPlatformVersion>21.0</SupportedOSPlatformVersion>
+		<ProjectGuid>{01691235-DA44-443C-BC18-4486BA9C71B1}</ProjectGuid>
+		<ProjectTypeGuids>{EFBA0AD7-5A72-4C68-AF49-83D382785DCF};{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}</ProjectTypeGuids>
+		<TemplateGuid>{c9e5eea5-ca05-42a1-839b-61506e0a37df}</TemplateGuid>
+		<OutputType>Library</OutputType>
+		<RootNamespace>Utilities.Droid</RootNamespace>
+		<AssemblyName>Utilities.Android</AssemblyName>
+	</PropertyGroup>
+	<PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+		<DebugSymbols>true</DebugSymbols>
+		<DebugType>portable</DebugType>
+		<Optimize>false</Optimize>
+		<OutputPath>bin\Debug</OutputPath>
+		<DefineConstants>DEBUG;</DefineConstants>
+		<ErrorReport>prompt</ErrorReport>
+		<WarningLevel>4</WarningLevel>
+		<AndroidLinkMode>None</AndroidLinkMode>
+		<AndroidManagedSymbols>false</AndroidManagedSymbols>
+	</PropertyGroup>
+	<PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+		<DebugSymbols>true</DebugSymbols>
+		<DebugType>portable</DebugType>
+		<Optimize>true</Optimize>
+		<OutputPath>bin\Release</OutputPath>
+		<ErrorReport>prompt</ErrorReport>
+		<WarningLevel>4</WarningLevel>
+		<AndroidManagedSymbols>true</AndroidManagedSymbols>
+		<AndroidUseSharedRuntime>false</AndroidUseSharedRuntime>
+	</PropertyGroup>
+	<ItemGroup>
+	  <None Remove="Resources\drawable-hdpi\niq_ic_system_notification.png" />
+	  <None Remove="Resources\drawable-mdpi\niq_ic_system_notification.png" />
+	  <None Remove="Resources\drawable-xhdpi\niq_ic_system_notification.png" />
+	  <None Remove="Resources\drawable-xxhdpi\niq_ic_statusbar_import_high.png" />
+	  <None Remove="Resources\drawable-xxhdpi\niq_ic_statusbar_import_low.png" />
+	  <None Remove="Resources\drawable-xxhdpi\niq_ic_statusbar_import_med.png" />
+	  <None Remove="Resources\drawable-xxhdpi\niq_ic_statusbar_uploading_high.png" />
+	  <None Remove="Resources\drawable-xxhdpi\niq_ic_statusbar_uploading_low.png" />
+	  <None Remove="Resources\drawable-xxhdpi\niq_ic_statusbar_uploading_med.png" />
+	  <None Remove="Resources\drawable-xxhdpi\niq_ic_system_notification.png" />
+	  <None Remove="Resources\drawable-xxxhdpi\niq_ic_system_notification.png" />
+	  <None Remove="Resources\drawable\niq_ic_sync_system_notification_animated.xml" />
+	</ItemGroup>
+	<ItemGroup>
+	  <ProjectReference Include="..\..\Widgets\Widgets\Widgets.csproj" />
+	  <ProjectReference Include="..\Utilities\Utilities.csproj" />
+	</ItemGroup>
+	<ItemGroup>
+		<AndroidResource Include="Resources\drawable-xxhdpi\niq_ic_statusbar_import_high.png" />
+		<AndroidResource Include="Resources\drawable-xxhdpi\niq_ic_statusbar_import_low.png" />
+		<AndroidResource Include="Resources\drawable-xxhdpi\niq_ic_statusbar_import_med.png" />
+		<AndroidResource Include="Resources\drawable-xxhdpi\niq_ic_statusbar_uploading_high.png" />
+		<AndroidResource Include="Resources\drawable-xxhdpi\niq_ic_statusbar_uploading_low.png" />
+		<AndroidResource Include="Resources\drawable-xxhdpi\niq_ic_statusbar_uploading_med.png" />
+		<AndroidResource Include="Resources\drawable\niq_ic_sync_system_notification_animated.xml" />
+	</ItemGroup>
+	<ItemGroup>
+		<AndroidResource Include="Resources\drawable-hdpi\niq_ic_system_notification.png" />
+	</ItemGroup>
+	<ItemGroup>
+		<AndroidResource Include="Resources\drawable-mdpi\niq_ic_system_notification.png" />
+	</ItemGroup>
+	<ItemGroup>
+		<AndroidResource Include="Resources\drawable-xhdpi\niq_ic_system_notification.png" />
+	</ItemGroup>
+	<ItemGroup>
+		<AndroidResource Include="Resources\drawable-xxhdpi\niq_ic_system_notification.png" />
+	</ItemGroup>
+	<ItemGroup>
+		<AndroidResource Include="Resources\drawable-xxxhdpi\niq_ic_system_notification.png" />
+	</ItemGroup>
+
+</Project>

@@ -1,0 +1,11 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<animation-list xmlns:android="http://schemas.android.com/apk/res/android"
+    android:oneshot="false">
+	<item android:drawable="@drawable/niq_status_bluerebranding_notification" android:duration="500" />
+	<item android:drawable="@drawable/niq_blue_statusbar_import_low" android:duration="500" />
+	<item android:drawable="@drawable/niq_blue_statusbar_import_med" android:duration="500" />
+	<item android:drawable="@drawable/niq_blue_statusbar_import_high" android:duration="500" />
+	<item android:drawable="@drawable/niq_blue_statusbar_uploading_low" android:duration="500" />
+	<item android:drawable="@drawable/niq_blue_statusbar_uploading_med" android:duration="500" />
+	<item android:drawable="@drawable/niq_blue_statusbar_uploading_high" android:duration="500" />
+</animation-list>

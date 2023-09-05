@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Shell
+    xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+    xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+    xmlns:local="clr-namespace:Widgets;assembly=Widgets"
+    xmlns:widgets="clr-namespace:Widgets;assembly=Widgets"
+    xmlns:sample="clr-namespace:SampleApp.MAUI"
+    x:Class="SampleApp.MAUI.MainPage">
+    <Shell.FlyoutHeader>
+        <Grid x:Name="header" BackgroundColor="{Binding PrimaryColor}" HeightRequest="200">
+            <Label x:Name="headerTitle" Text="CWL Sample" TextColor="{Binding OnPrimary}" FontAttributes="Bold"
+                FontSize="Subtitle" HorizontalTextAlignment="Center" VerticalTextAlignment="Center" />
+        </Grid>
+    </Shell.FlyoutHeader>
+    <FlyoutItem Title="Main Page" Route="main">
+        <ShellContent>
+            <widgets:NIQContentPage Title="Main Page">
+                <ScrollView>
+                    <StackLayout Padding="20">
+                        <local:NIQColoredButton Text="MAUI implementation" Command="{Binding OpenMauiControllerCommand}" />
+                        <local:NIQColoredButton Text="Native implementation" Command="{Binding OpenMauiInNativeCommand}" />
+                    </StackLayout>
+                </ScrollView>
+            </widgets:NIQContentPage>
+        </ShellContent>
+    </FlyoutItem>
+    <FlyoutItem FlyoutItemIsVisible="False">
+        <ShellContent Title="Widgets" Route="widget_page" />
+    </FlyoutItem>
+    <MenuItem Text="About" Command ="{Binding ShowAboutCommand}"/>
+</Shell>

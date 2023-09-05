@@ -1,0 +1,56 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<ContentView
+    xmlns="http://schemas.microsoft.com/dotnet/2021/maui" 
+    xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+    xmlns:local="clr-namespace:Widgets"
+    x:Class="Widgets.NIQPicker"
+    x:Name="PickerView">
+    <ContentView.Resources>
+        <ResourceDictionary>
+            <local:PickerRowConverter x:Key="rowConverter"/>
+            <local:PickerColumnConverter x:Key="columnConverter"/>
+            <local:InverseBoolConverter x:Key="inverseBoolConverter"/>
+        </ResourceDictionary>
+    </ContentView.Resources>
+    <StackLayout Orientation="Vertical">
+        <Grid x:Name="pickerGrid" BindableLayout.ItemsSource="{Binding Source={x:Reference PickerView}, Path=ItemsList}">
+            <BindableLayout.ItemTemplate>
+                <DataTemplate>
+                    <StackLayout>
+                        <local:NIQBorderlessButton
+                            Text="{Binding Title}"
+                            ImageSource="{Binding ItemIcon}"
+                            IsVisible="{Binding IsSelected, Converter={StaticResource inverseBoolConverter}}"
+                            Command="{Binding Source={x:Reference PickerView}, Path=ButtonClickedCommand}"
+                            CommandParameter="{Binding Index}" />
+                        <local:NIQOutlineButton
+                            Text="{Binding Title}"
+                            IsVisible="{Binding IsSelected}"
+                            ImageSource="{Binding ItemIcon}"
+                            Command="{Binding Source={x:Reference PickerView}, Path=ButtonClickedCommand}"
+                            CommandParameter="{Binding Index}" />
+                        <Grid.Row>
+                            <MultiBinding Converter="{StaticResource rowConverter}">
+                                <MultiBinding.Bindings>
+                                    <Binding Path="Index" />
+                                    <Binding Source="{x:Reference PickerView}" Path="ItemsNumberInRow" />
+                                </MultiBinding.Bindings>
+                            </MultiBinding>
+                        </Grid.Row>
+                        <Grid.Column>
+                            <MultiBinding Converter="{StaticResource columnConverter}">
+                                <MultiBinding.Bindings>
+                                    <Binding Path="Index" />
+                                    <Binding Source="{x:Reference PickerView}" Path="ItemsNumberInRow" />
+                                </MultiBinding.Bindings>
+                            </MultiBinding>
+                        </Grid.Column>
+                    </StackLayout>
+                </DataTemplate>
+            </BindableLayout.ItemTemplate>
+        </Grid>
+        <BoxView Color="{Binding Source={x:Static local:NIQThemeController.Theme}, Path=Error}"
+            IsVisible="{Binding Source={x:Reference PickerView}, Path=IsError}"
+            HeightRequest="1" HorizontalOptions="FillAndExpand" VerticalOptions="FillAndExpand"/>
+    </StackLayout>
+</ContentView>

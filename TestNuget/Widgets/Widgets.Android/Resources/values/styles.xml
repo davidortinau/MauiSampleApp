@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<resources>
+  <!-- Base theme applied no matter what API -->
+  <style name="CalendarTheme" parent="Theme.AppCompat.Light.DarkActionBar">
+    <item name="windowActionModeOverlay">true</item>
+    <item name="android:datePickerDialogTheme">@style/AppCompatDialogStyleNIQLight</item>
+  </style>
+  <style name="AppCompatDialogStyleBlueLight" parent="Theme.AppCompat.Light.Dialog">
+    <item name="colorAccent">#00AEEF</item>
+  </style>
+  <style name="CalendarNIQTheme" parent="Theme.AppCompat.Light.DarkActionBar">
+    <item name="windowActionModeOverlay">true</item>
+    <item name="android:datePickerDialogTheme">@style/AppCompatDialogStyleNIQLight</item>
+  </style>
+  <style name="AppCompatDialogStyleNIQLight" parent="Theme.AppCompat.Light.Dialog">
+    <item name="colorAccent">#000000</item>
+  </style>
+	<style name="CalendarNIQRebrandTheme" parent="Theme.AppCompat.Light.DarkActionBar">
+		<item name="windowActionModeOverlay">true</item>
+		<item name="android:datePickerDialogTheme">@style/AppCompatDialogStyleNIQRebrand</item>
+	</style>
+	<style name="AppCompatDialogStyleNIQRebrand" parent="Theme.AppCompat.Light.Dialog">
+		<item name="colorAccent">#2D6DF6</item>
+	</style>
+</resources>

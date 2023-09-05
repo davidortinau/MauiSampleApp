@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+	<color name="flash_green">#00ff00</color>
+	<color name="chrono_delimiter_gray">#1A000000</color>
+	<color name="chrono_conflict_orange">#f06400</color>
+	<color name="chrono_highlight">#CCbaffb9</color>
+	<color name="chrono_cell_state_empty">#ffffff</color>
+	<color name="chrono_cell_state_disabled">#bfbfbf</color>
+	<color name="chrono_cell_state_readonly">#a9e5ff</color>
+	<color name="chrono_cell_state_editable">#baffb9</color>
+	<color name="chrono_cell_state_optional">#e3e3e3</color>
+	<color name="chrono_cell_pressed">#00ff00</color>
+
+	<color name="chrono_blue_highlight">#A6C1FB</color>
+	<color name="chrono_blue_cell_pressed">#2D6DF6</color>
+	<color name="chrono_blue_cell_state_editable">#A6C1FB</color>
+</resources>

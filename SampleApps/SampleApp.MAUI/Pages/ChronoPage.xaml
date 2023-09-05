@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<ContentPage
+    xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+    xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+    xmlns:local="clr-namespace:Widgets;assembly=Widgets"
+    x:Class="SampleApp.MAUI.ChronoPage"
+    Title="Test Nuget">
+    <ContentPage.Content>
+        <Grid ColumnDefinitions="Auto"
+              RowDefinitions="Auto, Auto"
+              RowSpacing="5"
+              VerticalOptions="Center"
+              HorizontalOptions="Center">
+            <local:NIQColoredButton Grid.Row="0" Text="Open Complex Custom Activity" Command="{Binding StartChronoCommand}" />
+            <local:NIQColoredButton Grid.Row="1" Text="Show Dialog" Command="{Binding ShowLongInactivyDialogCommand}"/>
+    </Grid>
+    </ContentPage.Content>
+</ContentPage>
+

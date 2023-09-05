@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ImageButton xmlns="http://schemas.microsoft.com/dotnet/2021/maui" 
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:widgets="clr-namespace:Widgets;assembly=Widgets"
+             x:Class="Widgets.NIQImageButton"
+             x:Name="ImgButton">
+    <VisualStateManager.VisualStateGroups>
+        <VisualStateGroupList>
+            <VisualStateGroup x:Name="NIQImageButtonCommonStates">
+                <VisualState x:Name="Normal">
+                    <VisualState.Setters>
+                        <Setter Property="BackgroundColor" Value="Transparent"/>
+                    </VisualState.Setters>
+                </VisualState>
+                <VisualState x:Name="Pressed">
+                    <VisualState.Setters>
+                        <Setter Property="BackgroundColor" Value="{Binding Source={x:Reference ImgButton}, Path=BackgroundPressedColor}"/>
+                    </VisualState.Setters>
+                </VisualState>
+                <VisualState x:Name="Released">
+                    <VisualState.Setters>
+                        <Setter Property="BackgroundColor" Value="{Binding Source={x:Reference ImgButton}, Path=BackgroundPressedColor}" />
+                    </VisualState.Setters>
+                </VisualState>
+            </VisualStateGroup>
+        </VisualStateGroupList>
+    </VisualStateManager.VisualStateGroups>
+</ImageButton>

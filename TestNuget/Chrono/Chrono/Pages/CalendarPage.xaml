@@ -1,0 +1,60 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<chrono:ChronoBasePage xmlns:chrono="clr-namespace:Chrono"
+    xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+    xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+    xmlns:widgets="clr-namespace:Widgets;assembly=Widgets"
+    xmlns:local="clr-namespace:Chrono"
+    x:Class="Chrono.CalendarPage"
+    x:Name="ChronoCalendar"
+    BackgroundColor="{Binding Source = {x:Static widgets:NIQThemeController.Theme}, Path=Surface}"
+    NavigationPage.HasNavigationBar="True">
+    <Shell.BackButtonBehavior>
+        <BackButtonBehavior Command="{Binding OnBackPressed}" />
+    </Shell.BackButtonBehavior>
+    <Grid>
+        <widgets:NIQCarouselView x:Name="ActivitiesCarouselView"
+                      ItemsSource="{Binding ActivityItems}"
+                      PeekAreaInsets="20"
+                      Loop="False"
+                      IsScrollAnimated="False"
+                      CurrentItem="{Binding CurrentDayItem}"
+                      Position="{Binding CurrentPosition}"
+                      ManualSetPosition="{Binding ManualSetPosition}">
+            <widgets:NIQCarouselView.ItemsLayout>
+                <LinearItemsLayout Orientation="Horizontal"
+                                   ItemSpacing="5"
+                                   SnapPointsAlignment="Center"
+                                   SnapPointsType="MandatorySingle" />
+            </widgets:NIQCarouselView.ItemsLayout>
+            <widgets:NIQCarouselView.ItemTemplate>
+                <DataTemplate>
+                    <StackLayout Orientation="Vertical"
+                                 BackgroundColor="Transparent">
+                        <Frame BackgroundColor="{Binding Source = {x:Static widgets:NIQThemeController.Theme}, Path=PrimaryVariant}"
+                               CornerRadius="10"
+                               HorizontalOptions="Center"
+                               VerticalOptions="Center"
+                               Margin="5"
+                               Padding="10, 5, 10, 5">
+                            <Label 
+                                   VerticalOptions="Center"
+                                   HorizontalOptions="Center"
+                                   FontSize="Small"
+                                   TextColor="{Binding Source = {x:Static widgets:NIQThemeController.Theme}, Path=OnPrimary}"
+                                   Text="{Binding Date, StringFormat='{0:MMM dd, yyyy}'}" />
+                        </Frame>
+                        <Frame CornerRadius="8"
+                               Padding="0"
+                               Margin="10, 0, 10, 0"
+                               VerticalOptions="FillAndExpand"
+                               BackgroundColor="{Binding Source = {x:Static widgets:NIQThemeController.Theme}, Path=Background}">
+                            <local:ChronoListView Items="{Binding TimeIntervals}"        
+                                                  ItemSelected="ChronoListView_ItemSelected"
+                                                  ItemLongClick="ChronoListView_LongClick"/>
+                        </Frame>
+                    </StackLayout>
+                </DataTemplate>
+            </widgets:NIQCarouselView.ItemTemplate>
+        </widgets:NIQCarouselView>
+    </Grid>
+</chrono:ChronoBasePage>

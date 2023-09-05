@@ -1,0 +1,77 @@
+<?xml version="1.0"?>
+<package>
+  <metadata>
+    <id>TestApp</id>
+    <version>0.0.2</version>
+    <title>TestApp</title>
+    <authors>TestApp</authors>
+    <owners>TestApp</owners>
+    <requireLicenseAcceptance>false</requireLicenseAcceptance>
+    <description>
+        Test Nuget Application
+    </description>
+    <releaseNotes>Version 0.0.2</releaseNotes>
+    <copyright>Copyright (c) Company Name</copyright>
+    <tags>TestApp</tags>
+    <dependencies>
+         <group targetFramework="net7.0">
+            <dependency id="CsvHelper" version="30.0.1" />
+            <dependency id="Microsoft.Azure.Cosmos.Table" version="1.0.8" />
+            <dependency id="Microsoft.Azure.Storage.Blob" version="11.2.2" />
+            <dependency id="Microsoft.Azure.Storage.Queue" version="11.2.2" />
+            <dependency id="Newtonsoft.Json" version="13.0.2" />
+            <dependency id="Microsoft.AppCenter.Analytics" version="5.0.2" />
+            <dependency id="Microsoft.AppCenter.Crashes" version="5.0.2" />
+            <dependency id="Microsoft.Toolkit.Mvvm" version="7.1.0" />
+            <dependency id="BouncyCastle.NetCore" version="1.8.8" />
+            <dependency id="Microsoft.Extensions.DependencyInjection" version="7.0.0" />
+			<dependency id="Microsoft.Extensions.Configuration" version="7.0.0" />
+			<dependency id="Microsoft.Extensions.Logging" version="7.0.0"/>
+			<dependency id="Microsoft.Extensions.Logging.Abstractions" version="7.0.0"/>
+			<dependency id="Microsoft.Maui.Graphics" version="7.0.81" />
+			<dependency id="CommunityToolkit.Mvvm" version="8.1.0" />
+            <dependency id="Nielsen.PhotoPicker" version="9.0.28.3" />
+        </group>
+        <group targetFramework="net7.0-android28">
+            <dependency id="CsvHelper" version="21.1.0" />
+            <dependency id="Microsoft.Azure.Cosmos.Table" version="1.0.8" />
+            <dependency id="Microsoft.Azure.Storage.Blob" version="11.2.2" />
+            <dependency id="Microsoft.Azure.Storage.Queue" version="11.2.2" />
+			<dependency id="Newtonsoft.Json" version="13.0.2" />
+            <dependency id="Microsoft.AppCenter.Analytics" version="5.0.2" />
+            <dependency id="Microsoft.AppCenter.Crashes" version="5.0.2" />
+            <dependency id="Microsoft.Toolkit.Mvvm" version="7.1.0" />
+            <dependency id="BouncyCastle.NetCore" version="1.8.8" />
+            <dependency id="Microsoft.Extensions.DependencyInjection" version="7.0.0" />
+			<dependency id="Microsoft.Extensions.Configuration" version="7.0.0" />
+            <dependency id="Xamarin.AndroidX.Biometric" version="1.1.0.11" />
+            <dependency id="Nielsen.PhotoPicker" version="9.0.28.3" />
+			<dependency id="CommunityToolkit.Mvvm" version="8.1.0" />
+			<dependency id="Microsoft.Maui.Graphics" version="7.0.81" />	
+			<dependency id="Xamarin.AndroidX.Lifecycle.Extensions" version="2.2.0.10" />
+        </group>
+    </dependencies>
+    <frameworkAssemblies>
+      <!-- Android reference assemblies -->
+      <frameworkAssembly assemblyName="Java.Interop" targetFramework="net7.0-android28" />
+      <frameworkAssembly assemblyName="System.Core" targetFramework="net7.0-android28" />
+      <frameworkAssembly assemblyName="System" targetFramework="net7.0-android28" />
+      <frameworkAssembly assemblyName="System.Xml" targetFramework="net7.0-android28" />
+    </frameworkAssemblies>
+  </metadata>
+  
+  <files>
+    <!-- .NET Standard reference assemblies -->
+    <file src="..\TestNuget\Widgets\Widgets\bin\$Configuration$\net7.0\Widgets.dll" target="lib\net7.0" />
+    <file src="..\TestNuget\Utilities\Utilities\bin\$Configuration$\net7.0\Utilities.dll" target="lib\net7.0" />
+    <file src="..\TestNuget\Chrono\Chrono\bin\$Configuration$\net7.0\Chrono.dll" target="lib\net7.0" />
+
+    <!-- Android reference assemblies -->
+    <file src="..\TestNuget\Widgets\Widgets.Android\bin\$Configuration$\net7.0-android\Widgets.dll" target="lib\net7.0-android28" />
+    <file src="..\TestNuget\Widgets\Widgets.Android\bin\$Configuration$\net7.0-android\Widgets.Android.dll" target="lib\net7.0-android28" />
+    <file src="..\TestNuget\Utilities\Utilities.Android\bin\$Configuration$\net7.0-android\Utilities.Android.dll" target="lib\net7.0-android28" />
+    <file src="..\TestNuget\Utilities\Utilities.Android\bin\$Configuration$\net7.0-android\Utilities.dll" target="lib\net7.0-android28" />
+    <file src="..\TestNuget\Chrono\Chrono.Android\bin\$Configuration$\net7.0-android\Chrono.dll" target="lib\net7.0-android28" />
+    <file src="..\TestNuget\Chrono\Chrono.Android\bin\$Configuration$\net7.0-android\Chrono.Android.dll" target="lib\net7.0-android28" />
+  </files>
+</package>

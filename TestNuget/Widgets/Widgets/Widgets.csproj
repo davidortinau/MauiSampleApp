@@ -1,0 +1,31 @@
+﻿<Project Sdk="Microsoft.NET.Sdk">
+
+	<PropertyGroup>
+		<TargetFrameworks>net7.0</TargetFrameworks>
+		<UseMaui>true</UseMaui>
+		<ImplicitUsings>enable</ImplicitUsings>
+		<OutputType>Library</OutputType>
+	</PropertyGroup>
+
+	<ItemGroup>
+
+      <!-- Custom Fonts -->
+      <MauiFont Include="Fonts\*" />
+
+	</ItemGroup>
+ 
+	<ItemGroup>
+      <None Remove="Fonts\aktivgrotesk_bold.ttf" />
+	  <None Remove="Fonts\aktivgrotesk_italic.ttf" />
+	  <None Remove="Fonts\aktivgrotesk_regular.ttf" />
+	</ItemGroup>
+
+	<ItemGroup>
+	  <ProjectReference Include="..\..\Utilities\Utilities\Utilities.csproj" />
+	</ItemGroup>
+
+	<ItemGroup>
+	  <Folder Include="Images\" />
+	</ItemGroup>
+
+</Project>

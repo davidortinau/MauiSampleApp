@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Grid 
+      xmlns="http://schemas.microsoft.com/dotnet/2021/maui" 
+      xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+      xmlns:widgets="clr-namespace:Widgets"
+      x:Class="Widgets.NIQGrid"
+      x:Name="niqgrid"
+      Padding="0"
+      ColumnSpacing="16"
+      >
+    <!--  xmlns:xct="clr-namespace:Xamarin.CommunityToolkit.Effects;assembly=Xamarin.CommunityToolkit.MauiCompat"
+    xct:TouchEffect.NormalBackgroundColor="{Binding Source={x:Static widgets:NIQThemeController.Theme}, Path=Background}"
+      xct:TouchEffect.PressedBackgroundColor="{Binding Source={x:Static widgets:NIQThemeController.Theme}, Path=HoverColor}"-->
+</Grid>
+    

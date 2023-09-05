@@ -1,0 +1,42 @@
+{
+  "H": {
+    "UUID": "EventUUID",
+    "TS": "27-APR-21 02.44.20 PM",
+    "SRC": "cwsample",
+    "SRV": "2_00.77.08.03",
+    "RID": "66173",
+    "CID": "356"
+  },
+  "D": {
+    "SID": "18005956",
+    "AID": "4227553",
+    "FRQ": "M",
+    "EID": "136"
+  },
+  "A": [
+    {
+      "AN": "MultiDayAudit",
+      "AV": "Y"
+    },
+    {
+      "AN": "MultiVisitAudit",
+      "AV": "N"
+    },
+    {
+      "AN": "VisitDates",
+      "AV": "27-APR-21,28-APR-21"
+    },
+    {
+      "AN": "AlternativeMethodology",
+      "AV": "Y"
+    },
+    {
+      "AN": "StoreStatus",
+      "AV": "AC"
+    },
+    {
+      "AN": "OriginalAuditDate",
+      "AV": "27-APR-21"
+    }
+  ]
+}

@@ -1,0 +1,46 @@
+﻿<Project Sdk="Microsoft.NET.Sdk">
+  <PropertyGroup>
+    <TargetFrameworks>net7.0-android</TargetFrameworks>
+    <UseMaui>True</UseMaui>
+    <OutputType>Library</OutputType>
+    <RootNamespace>Chrono.Droid</RootNamespace>
+    <AssemblyTitle>Chrono.Android</AssemblyTitle>
+    <Product>Chrono.Android</Product>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <AndroidUseSharedRuntime>false</AndroidUseSharedRuntime>
+  </PropertyGroup>
+  <ItemGroup>
+    <None Remove="Resources\drawable\ChronoBlueCellStateEditable.xml" />
+    <None Remove="Resources\drawable\ChronoBlueCellStateEmpty.xml" />
+    <None Remove="Resources\drawable\ChronoBlueCellStateOptional.xml" />
+    <None Remove="Resources\drawable\ChronoBlueCellStateSelected.xml" />
+    <None Remove="Resources\drawable\ChronoCellStateEditable.xml" />
+    <None Remove="Resources\drawable\ChronoCellStateEmpty.xml" />
+    <None Remove="Resources\drawable\ChronoCellStateOptional.xml" />
+    <None Remove="Resources\drawable\ChronoCellStateSelected.xml" />
+    <None Remove="Resources\layout\ChronoDialogActivity.xml" />
+    <None Remove="Resources\layout\ChronoListViewCell.xml" />
+    <None Remove="Resources\layout\ChronoLoadingActivity.xml" />
+    <None Remove="Resources\values\attr.xml" />
+    <None Remove="Resources\values\colors.xml" />
+    <None Remove="Resources\values\Themes.xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <AndroidResource Include="Resources\layout\ChronoDialogActivity.xml" />
+    <AndroidResource Include="Resources\layout\ChronoLoadingActivity.xml" />
+    <AndroidResource Include="Resources\layout\ChronoListViewCell.xml" />
+    <AndroidResource Include="Resources\values\Themes.xml" />
+    <AndroidResource Include="Resources\values\Colors.xml" />
+    <AndroidResource Include="Resources\drawable\ChronoCellStateOptional.xml" />
+    <AndroidResource Include="Resources\drawable\ChronoCellStateEditable.xml" />
+    <AndroidResource Include="Resources\drawable\ChronoCellStateEmpty.xml" />
+	<AndroidResource Include="Resources\drawable\ChronoCellStateSelected.xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\..\Utilities\Utilities\Utilities.csproj" />
+    <ProjectReference Include="..\..\Widgets\Widgets.Android\Widgets.Android.csproj" />
+    <ProjectReference Include="..\..\Widgets\Widgets\Widgets.csproj" />
+    <ProjectReference Include="..\Chrono\Chrono.csproj" />
+  </ItemGroup>
+</Project>

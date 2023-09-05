@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:orientation="vertical"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@android:color/transparent">
+    <androidx.appcompat.widget.Toolbar
+        android:id="@+id/toolbar"
+        android:layout_width="match_parent"
+        android:layout_height="?attr/actionBarSize" />
+    <RelativeLayout
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center"
+        android:padding="20dp">
+        <Button
+            android:id="@+id/open_chrono_button"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Open Complex Custom Activity"
+            android:layout_centerVertical="true"
+            android:layout_alignParentTop="true"/>
+        <Button
+            android:id="@+id/show_atypical_button"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Show Dialog"
+            android:layout_below="@id/open_chrono_button"/>
+    </RelativeLayout>
+</LinearLayout>

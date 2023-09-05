@@ -1,0 +1,128 @@
+{
+  "triggers": [
+    {
+      "trigger": "onAuditOpen",
+      "rules": [
+        {
+          "id": 0
+        },
+        {
+          "id": 1
+        },
+        {
+          "id": 2
+        },
+        {
+          "id": 3
+        },
+        {
+          "id": 4
+        }
+      ]
+    },
+    {
+      "trigger": "onSyncStart",
+      "rules": [
+        {
+          "id": 3
+        }
+      ]
+    },
+    {
+      "trigger": "onAuditClose",
+      "rules": [
+        {
+          "id": 5
+        }
+      ]
+    },
+    {
+      "trigger": "onRecruitAudit",
+      "rules": [
+        {
+          "id": 3
+        }
+      ]
+    }
+  ],
+  "rules": [
+    {
+      "id": 0,
+      "condition": "!audit.IsInstructionsLoaded",
+      "action": "ui.ShowAlert('NO_STORE_INSTRUCTIONS')",
+      "skip": [
+        {
+          "id": 1
+        },
+        {
+          "id": 2
+        },
+        {
+          "id": 3
+        },
+        {
+          "id": 4
+        }
+      ]
+    },
+    {
+      "id": 1,
+      "condition": "device.Today < (audit.StartDate - device.Days(4))",
+      "action": "ui.ShowAlert('STORE_NOT_READY')",
+      "skip": [
+        {
+          "id": 2
+        },
+        {
+          "id": 3
+        },
+        {
+          "id": 4
+        }
+      ]
+    },
+    {
+      "id": 2,
+      "condition": "device.Today > (audit.EndDate + device.Days(4))",
+      "action": "ui.ShowAlert('STORE_OPEN_CONFIRM_OUTDATED')",
+      "skip": [
+        {
+          "id": 3
+        },
+        {
+          "id": 4
+        }
+      ]
+    },
+    {
+      "id": 3,
+      "condition": "!device.IsLocationTracking",
+      "action": "ui.ShowNIQAlert('GeolocationError')",
+      "skip": [
+        {
+          "id": 4
+        }
+      ]
+    },
+    {
+      "id": 4,
+      "condition": true,
+      "action": "ui.ShowAlert('STORE_OPEN_CONFIRM')"
+    },
+    {
+      "id": 5,
+      "condition": true,
+      "action": "ui.ShowAlert('STORE_CLOSE_INFO')"
+    }
+  ],
+  "alerts": [
+    {
+      "code": "STORE_CLOSE_INFO",
+      "icon": "(?)",
+      "type": "Confirm",
+      "title": "'Close Store'",
+      "message": "string.Format('UserType: {0}\nWorking: {1}\nAutoTime: {2}', user.Type, audits.Where('Working,WorkingLead,WorkingSecondary').Count.ToString(), device.IsAutoTime.ToString())",
+      "details": []
+    }
+  ]
+}
