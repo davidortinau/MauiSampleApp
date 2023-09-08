@@ -57,11 +57,12 @@ namespace Widgets.Droid
         {
             base.OnCreate(savedInstanceState);
             Instance = this;
-
+            
             MauiAppBuilder builder = MauiApp.CreateBuilder();
             builder.UseMauiEmbedding<Microsoft.Maui.Controls.Application>();
             MauiApp mauiApp = builder.Build();
             mauiContext = new MauiContext(mauiApp.Services, this);
+       
         }
 
         /// <summary>

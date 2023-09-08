@@ -3,8 +3,12 @@ using Android.OS;
 using Android.Content;
 using Android.Content.PM;
 using AndroidX.AppCompat.App;
+using Microsoft.Maui;
 using Microsoft.Maui.Controls;
 using Microsoft.Maui.ApplicationModel;
+using Microsoft.Maui.Embedding;
+using Microsoft.Maui.Hosting;
+using Microsoft.Maui.Platform;
 using Widgets;
 
 namespace Chrono.Droid
@@ -32,7 +36,8 @@ namespace Chrono.Droid
             }
             Platform.Init(this, bundle);
             SetContentView(Resource.Layout.ChronoLoadingActivity);
-            var newIntent = new Intent(this.ApplicationContext, typeof(ChronoActivity));
+            
+            var newIntent = new Intent(this.ApplicationContext, typeof(ChronoBasicActivity));
             newIntent.PutExtras(Intent);
             Device.BeginInvokeOnMainThread(() =>
             {

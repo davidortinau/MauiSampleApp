@@ -6,6 +6,10 @@ using Widgets.Droid;
 using System;
 using Android.Util;
 using Android.Views;
+using AndroidX.AppCompat.App;
+using Microsoft.Maui;
+using Microsoft.Maui.Embedding;
+using Microsoft.Maui.Hosting;
 using Microsoft.Maui.Platform;
 using Newtonsoft.Json;
 
@@ -15,10 +19,10 @@ namespace Chrono.Droid
     /// Chrono entry point for native activities.
     /// </summary>
     [Activity(LaunchMode = LaunchMode.SingleTop, Theme = "@style/ChronoAppTheme.ChronoEmptyActivity")]
-    public class ChronoActivity : NIQBaseActivity
+    public class ChronoBasicActivity : AppCompatActivity
     {
         #region Constants
-        private const string TAG = nameof(ChronoActivity);
+        private const string TAG = nameof(ChronoBasicActivity);
 
         public const string ExtraKeySelectedDate = "ChronoNativeHelper.SelectedDate";
 
@@ -68,7 +72,11 @@ namespace Chrono.Droid
                     var selectedDate = DateTime.Parse(Intent.GetStringExtra(ExtraKeySelectedDate));
                     break;
                 case ChronoActivityMode.Calendar:
-                    new ChronoPage().ToContainerView(mauiContext);
+                    MauiAppBuilder builder = MauiApp.CreateBuilder();
+                    builder.UseMauiEmbedding<Microsoft.Maui.Controls.Application>();
+                    MauiApp mauiApp = builder.Build();
+                    var mauiContext = new MauiContext(mauiApp.Services, this);
+                    SetContentView(new ChronoPage().ToContainerView(mauiContext));
                     break;
             }
         }

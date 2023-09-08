@@ -30,5 +30,11 @@ namespace Chrono
                 MainPage = new ChronoPage();
             }
         }
+
+        protected override Window CreateWindow(IActivationState activationState)
+        {
+            return new Window(this.MainPage);
+            // return base.CreateWindow(activationState);
+        }
     }
 }
